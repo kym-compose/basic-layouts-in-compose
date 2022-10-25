@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">BasicLayoutsInCompose</string>
     <string name="placeholder_search">Search</string>
+    <string name="red">Red</string>
+    <string name="orange">Orange</string>
     <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="navy">Navy</string>
+    <string name="purple">Purple</string>
 </resources>
