@@ -41,6 +41,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kimym.compose.ui.theme.BasicLayoutsInComposeTheme
+import java.util.Locale
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +51,24 @@ class MainActivity : ComponentActivity() {
                 SearchBar(Modifier.padding(8.dp))
             }
         }
+    }
+}
+
+@Composable
+fun HomeSection(
+    @StringRes title: Int,
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit,
+) {
+    Column(modifier) {
+        Text(
+            text = stringResource(id = title).uppercase(Locale.getDefault()),
+            style = MaterialTheme.typography.h2,
+            modifier = Modifier
+                .paddingFromBaseline(top = 40.dp, bottom = 8.dp)
+                .padding(horizontal = 16.dp)
+        )
+        content()
     }
 }
 
@@ -167,6 +186,16 @@ fun RainbowCard(
                 style = MaterialTheme.typography.h3,
                 modifier = Modifier.padding(horizontal = 16.dp)
             )
+        }
+    }
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)
+@Composable
+fun HomeSectionPreview() {
+    BasicLayoutsInComposeTheme {
+        HomeSection(title = R.string.rainbow) {
+            RainbowElementRow()
         }
     }
 }

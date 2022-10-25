@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">BasicLayoutsInCompose</string>
     <string name="placeholder_search">Search</string>
+    <string name="rainbow">Rainbow</string>
     <string name="red">Red</string>
     <string name="orange">Orange</string>
     <string name="yellow">Yellow</string>
