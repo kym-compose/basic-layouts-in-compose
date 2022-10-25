@@ -9,4 +9,6 @@
     <string name="blue">Blue</string>
     <string name="navy">Navy</string>
     <string name="purple">Purple</string>
+    <string name="bottom_navigation_home">Home</string>
+    <string name="bottom_navigation_profile">Profile</string>
 </resources>
