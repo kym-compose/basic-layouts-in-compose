@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -22,7 +23,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -51,6 +54,25 @@ class MainActivity : ComponentActivity() {
                 SearchBar(Modifier.padding(8.dp))
             }
         }
+    }
+}
+
+@Composable
+fun HomeScreen(modifier: Modifier = Modifier) {
+    Column(
+        modifier
+            .verticalScroll(rememberScrollState())
+            .padding(vertical = 16.dp)
+    ) {
+        Spacer(Modifier.height(16.dp))
+        SearchBar(Modifier.padding(horizontal = 16.dp))
+        HomeSection(title = R.string.rainbow) {
+            RainbowElementRow()
+        }
+        HomeSection(title = R.string.rainbow) {
+            RainbowCardGrid()
+        }
+        Spacer(Modifier.height(16.dp))
     }
 }
 
@@ -187,6 +209,14 @@ fun RainbowCard(
                 modifier = Modifier.padding(horizontal = 16.dp)
             )
         }
+    }
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFFF0EAE2, heightDp = 180)
+@Composable
+fun HomeScreenPreview() {
+    BasicLayoutsInComposeTheme {
+        HomeScreen()
     }
 }
 
